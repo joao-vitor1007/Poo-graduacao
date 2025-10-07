@@ -12,13 +12,15 @@ import java.util.Optional;
 public interface EmpresaRepository extends JpaRepository<EmpresaModel, Integer> {
 
     Optional<EmpresaModel> findByCdEmpresa(Integer cdEmpresa);
-    Optional<EmpresaModel> findByNuEmpresa(Integer nuEmpresa);
+    Optional<EmpresaModel> findByNuCnpj(String nuCnpj);
     @Query("SELECT emp FROM EmpresaModel emp WHERE emp.flAtivo = 's' ")
-    List<EmpresaModel> findAllFlativo();
+    List<EmpresaModel> findAllByFlativo();
 
     @Transactional
     Optional<EmpresaModel> deleteByCdEmpresa(Integer cdEmpresa);
 
+
+    Optional<EmpresaModel> findByNuCnpj(Optional<EmpresaModel> byNuCnpj);
 
 
 }
