@@ -1,6 +1,7 @@
 package com.gerenciamento.estoque.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,5 +28,6 @@ public class EmpresaModel {
     private String dsEndereco;
    @Column(name = "FLATIVO", length = 1, nullable = false)
     private String flAtivo;
+// teste
 
 }
