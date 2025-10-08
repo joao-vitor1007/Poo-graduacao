@@ -1,6 +1,7 @@
 package com.gerenciamento.estoque.Repository;
 
 import com.gerenciamento.estoque.Model.EmpresaModel;
+import com.gerenciamento.estoque.Model.EstoqueModel;
 import jakarta.transaction.Transaction;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,7 +21,8 @@ public interface EmpresaRepository extends JpaRepository<EmpresaModel, Integer> 
     Optional<EmpresaModel> deleteByCdEmpresa(Integer cdEmpresa);
 
 
-    Optional<EmpresaModel> findByNuCnpj(Optional<EmpresaModel> byNuCnpj);
+    Optional<EmpresaModel> findByNuCnpj(Integer nuCnpj);
+
 
 
 }

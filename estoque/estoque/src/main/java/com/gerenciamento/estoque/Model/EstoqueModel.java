@@ -1,30 +1,28 @@
 package com.gerenciamento.estoque.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-
-@Table(name = "TBEMPRESA")
+@Entity
+@Table(name = "TBESTOQUE")
 public class EstoqueModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cdEstoque")
+    private Long id;
 
+    @Column(name = "cdLocalEstoque", length = 20, nullable = false)
+    private int cdLocalEstoque;
 
-    private String nmFantasia;
-    private String nuCnpj;
-    private String nuTelefone;
-    private String dsEndereco;
+    @Column(name = "qtEstoque", length = 20, nullable = false)
+    private int qtEstoque;
+
+    @Column(name = "flAtivo", length = 1, nullable = false)
     private String flAtivo;
-    private String nmRazao;
-    private Integer cdEmpresa;
+
+
 }
